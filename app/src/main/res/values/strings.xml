@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PetCare</string>
+    <string name="intro_1">Selamat Datang di PetCare</string>
+    <string name="intro_desc_title_1">Rencanakan</string>
+    <string name="intro_desc_1">Setiap berapa jam kah hewan peliharaanmu akan diberikan makanan secara otomatis?</string>
+    <string name="intro_desc_title_2">Jadwalkan</string>
+    <string name="intro_desc_2">Pada hari apa saja kah kamu tidak bisa memberikan makanan kepada hewan peliharaanmu?</string>
+    <string name="intro_desc_title_3">Tinggalkan</string>
+    <string name="intro_desc_3">Jangan khawatir. Dengan konfigurasimu, PetCare siap mengurus hewan peliharaanmu!</string>
+    <string name="next_screen">Selanjutnya</string>
+    <string name="finish_onboarding">Mulai</string>
+</resources>
