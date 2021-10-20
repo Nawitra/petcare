@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#75CD9E</color>
     <color name="blue_button">#5EA7FF</color>
+    <color name="textbox_color">#F4F9FE</color>
+    <color name="blue_login">#0645ad</color>
 </resources>

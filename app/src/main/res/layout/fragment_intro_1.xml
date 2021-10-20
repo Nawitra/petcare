@@ -11,7 +11,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_ver2"
         android:layout_width="wrap_content"
@@ -75,56 +74,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor1"
-        app:srcCompat="@drawable/intro_image_1" />
+        app:srcCompat="@drawable/img_intro_1" />
 
     <View
-        android:background="@drawable/rounded_top_corner"
-        android:id="@+id/intro_text_box_1"
+        android:id="@+id/view_onboarding_box_1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/shape_onboarding_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor2" />
 
     <TextView
-        android:id="@+id/intro_desc_title_1"
+        android:id="@+id/text_onboarding_title_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lato_reguler"
         android:gravity="center"
-        android:text="@string/intro_desc_title_1"
+        android:text="@string/tv_onboarding_title_1"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor2" />
 
     <TextView
-        android:id="@+id/intro_desc_1"
+        android:id="@+id/text_onboarding_description_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/lato_reguler"
         android:gravity="center"
-        android:text="@string/intro_desc_1"
+        android:lineSpacingExtra="10dp"
+        android:text="@string/tv_onboarding_description_1"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:lineSpacingExtra="10dp"
-        app:layout_constraintStart_toEndOf="@id/guideline_ver1"
         app:layout_constraintEnd_toStartOf="@id/guideline_ver5"
-        app:layout_constraintTop_toBottomOf="@id/intro_desc_title_1" />
+        app:layout_constraintStart_toEndOf="@id/guideline_ver1"
+        app:layout_constraintTop_toBottomOf="@id/text_onboarding_title_1" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button1"
+        android:id="@+id/button_onboarding_next_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/onboarding_button_1"
+        android:background="@drawable/btn_background"
         android:fontFamily="@font/lato_reguler"
-        android:onClick="nextPage"
-        android:text="@string/next_screen"
+        android:text="@string/btn_onboarding_next_screen"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline_ver4"

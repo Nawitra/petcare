@@ -24,7 +24,7 @@ class FirstIntroFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button1.setOnClickListener {
+        binding.buttonOnboardingNext1.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
             transaction?.replace(R.id.activity_onboarding, SecondIntroFragment())
             transaction?.disallowAddToBackStack()

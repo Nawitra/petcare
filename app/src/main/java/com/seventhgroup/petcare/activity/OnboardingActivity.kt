@@ -17,12 +17,15 @@ class OnboardingActivity: AppCompatActivity() {
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         val sharedPrefs: SharedPreferences = getSharedPreferences("onboarding_completed",
             Context.MODE_PRIVATE)
 
         if (sharedPrefs.getBoolean("onboarding_completed", false)) {
-            val mIntent = Intent(this@OnboardingActivity, MainActivity::class.java)
+            val mIntent = Intent(this@OnboardingActivity, SplashScreenActivity::class.java)
             startActivity(mIntent)
+            finish()
         } else {
             val pagerAdapter = OnboardingPagerAdapter(this@OnboardingActivity)
             binding.viewpagerOnboarding.adapter = pagerAdapter

@@ -3,7 +3,7 @@ package com.seventhgroup.petcare.adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.seventhgroup.petcare.fragment.FinalIntroFragment
+import com.seventhgroup.petcare.fragment.ThirdIntroFragment
 import com.seventhgroup.petcare.fragment.FirstIntroFragment
 import com.seventhgroup.petcare.fragment.SecondIntroFragment
 
@@ -15,7 +15,7 @@ class OnboardingPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(
         when (position) {
             0 -> FirstIntroFragment()
             1 -> SecondIntroFragment()
-            2 -> FinalIntroFragment()
+            2 -> ThirdIntroFragment()
         }
         return fragment as Fragment
     }

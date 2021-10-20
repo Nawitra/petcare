@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.seventhgroup.petcare.R
 import com.seventhgroup.petcare.activity.MainActivity
 import com.seventhgroup.petcare.databinding.FragmentIntro3Binding
 
-class FinalIntroFragment: Fragment() {
+class ThirdIntroFragment: Fragment() {
     private lateinit var binding: FragmentIntro3Binding
 
     override fun onCreateView(
@@ -26,7 +24,7 @@ class FinalIntroFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button3.setOnClickListener {
+        binding.buttonOnboardingFinish.setOnClickListener {
             val mIntent = Intent(requireContext(), MainActivity::class.java)
             startActivity(mIntent)
         }

@@ -10,6 +10,20 @@
         <entry key="..\:/PetCare/app/src/main/res/layout/fragment_intro_1.xml" value="0.264" />
         <entry key="..\:/PetCare/app/src/main/res/layout/fragment_intro_2.xml" value="0.19610507246376813" />
         <entry key="..\:/PetCare/app/src/main/res/layout/fragment_intro_3.xml" value="0.19610507246376813" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/drawable/general_drawer.xml" value="0.2703125" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/drawable/onboarding_button_1.xml" value="0.2703125" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/drawable/onboarding_drawer.xml" value="0.2703125" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/drawable/rounded_top_corner.xml" value="0.2703125" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/drawable/textbox_shape.xml" value="0.2703125" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/activity_onboarding.xml" value="0.19021739130434784" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/activity_splashscreen.xml" value="0.19021739130434784" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/fragment_intro_1.xml" value="0.19021739130434784" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/fragment_intro_2.xml" value="0.19021739130434784" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/fragment_intro_3.xml" value="0.19021739130434784" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/layout/splash_screen.xml" value="0.16530797101449277" />
+        <entry key="..\:/PetCare/petcare/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>

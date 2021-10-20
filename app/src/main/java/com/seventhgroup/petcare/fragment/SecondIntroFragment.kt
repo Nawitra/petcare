@@ -24,9 +24,9 @@ class SecondIntroFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button2.setOnClickListener {
+        binding.buttonOnboardingNext2.setOnClickListener {
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.activity_onboarding, FinalIntroFragment())
+            transaction?.replace(R.id.activity_onboarding, ThirdIntroFragment())
             transaction?.disallowAddToBackStack()
             transaction?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             transaction?.commit()
