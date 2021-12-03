@@ -92,6 +92,7 @@
         app:layout_constraintTop_toBottomOf="@id/image_login_logo" />
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/shape_general_box"
@@ -110,7 +111,7 @@
 
     <EditText
         android:id="@+id/edit_login_email"
-        android:layout_width="280dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_textbox"
         android:fontFamily="@font/lato_reguler"
@@ -118,14 +119,18 @@
         android:inputType="textEmailAddress"
         android:padding="15dp"
         android:textColor="@color/black"
+        android:textColorHint="@color/gray_unselected"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/text_hint_email"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor1" />
 
     <androidx.constraintlayout.helper.widget.Flow
-        android:layout_width="wrap_content"
+        android:id="@+id/flow"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
         android:orientation="horizontal"
         app:constraint_referenced_ids="text_hint_email, edit_login_email"
         app:flow_horizontalAlign="start"
@@ -146,7 +151,7 @@
 
     <EditText
         android:id="@+id/edit_login_password"
-        android:layout_width="280dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_textbox"
         android:fontFamily="@font/lato_reguler"
@@ -154,14 +159,18 @@
         android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@color/black"
+        android:textColorHint="@color/gray_unselected"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/text_hint_password"
         app:layout_constraintTop_toBottomOf="@id/edit_login_email" />
 
     <androidx.constraintlayout.helper.widget.Flow
-        android:layout_width="wrap_content"
+        android:id="@+id/flow2"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
         android:orientation="horizontal"
         app:constraint_referenced_ids="text_hint_password, edit_login_password"
         app:flow_horizontalAlign="start"
@@ -172,7 +181,7 @@
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="380dp"
+        android:layout_width="340dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue_button"

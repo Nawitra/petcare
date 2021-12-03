@@ -27,7 +27,7 @@ class SplashScreenActivity: AppCompatActivity() {
         bgImg.startAnimation(anim)
         
         Handler(Looper.getMainLooper()).postDelayed(Runnable() {
-            val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, OnboardingActivity::class.java)
             startActivity(intent)
             finish()
         }, delay)

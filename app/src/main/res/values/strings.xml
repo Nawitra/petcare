@@ -35,4 +35,12 @@
     <string name="toast_login_invalid_email_password">Input email atau password tidak valid</string>
     <string name="toast_login_successful">Login berhasil dilakukan!</string>
     <string name="toast_login_fail">Terjadi kesalahan</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="tv_profile_email">Email</string>
+    <string name="tv_profile_username">Username</string>
+    <string name="tv_profile_phone_number">Phone Number</string>
+    <string name="tv_setting">Setting</string>
+    <string name="sw_notification">Notifications</string>
+    <string name="sw_alarm">Alarm</string>
+    <string name="notification_days_title">Notification</string>
 </resources>

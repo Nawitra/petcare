@@ -11,4 +11,6 @@
     <color name="blue_button">#5EA7FF</color>
     <color name="textbox_color">#F4F9FE</color>
     <color name="blue_login">#0645ad</color>
+    <color name="gray_unselected">#e0e0e0</color>
+    <color name="gray_selected">#eeeeee</color>
 </resources>
