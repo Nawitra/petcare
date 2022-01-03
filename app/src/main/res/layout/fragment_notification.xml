@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/text_notification_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/lato_reguler"
+        android:gravity="center_horizontal"
+        android:text="@string/notification_days_title"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_day_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Monday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_notification_days" />
+
+    <TextView
+        android:id="@+id/text_day_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Tuesday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_one" />
+
+    <TextView
+        android:id="@+id/text_day_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Wednesday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_two" />
+
+    <TextView
+        android:id="@+id/text_day_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Thursday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_three" />
+
+    <TextView
+        android:id="@+id/text_day_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Friday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_four" />
+
+    <TextView
+        android:id="@+id/text_day_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Saturday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_five" />
+
+    <TextView
+        android:id="@+id/text_day_seven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_notification_unselected"
+        android:fontFamily="@font/lato_reguler"
+        android:padding="16dp"
+        android:text="Sunday"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/text_day_six" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
