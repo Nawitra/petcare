@@ -1,6 +1,12 @@
 package com.seventhgroup.petcare.activity
 
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,7 +23,6 @@ import com.seventhgroup.petcare.adapter.HistoryAdapter
 class HistoryActivity : AppCompatActivity() {
 
     private lateinit var dbref : DatabaseReference
-    //private lateinit var collectionRecyclerView: CollectionReference
     private lateinit var rvHistory : RecyclerView
     private lateinit var btnRefresh : Button
     private var historyArrayList : ArrayList<String> = arrayListOf()
@@ -67,6 +72,45 @@ class HistoryActivity : AppCompatActivity() {
                 }
             }
             true}
+
+        createNotificationChannel()
+        notification()
+    }
+
+    private fun notification()
+    {
+        val intent = Intent(applicationContext, Notification::class.java)
+
+        val pendingIntent = PendingIntent.getBroadcast(
+            applicationContext,
+            1,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val time: Long = 100
+        alarmManager.setExactAndAllowWhileIdle(
+            AlarmManager.RTC_WAKEUP,
+            time,
+            pendingIntent
+        )
+
+    }
+
+    private fun createNotificationChannel()
+    {
+        val name = "PetCare"
+        val desc = "Automatic Pet Feeder"
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel("channel1", name, importance)
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
+        channel.description = desc
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 
     private fun getDateData() {
