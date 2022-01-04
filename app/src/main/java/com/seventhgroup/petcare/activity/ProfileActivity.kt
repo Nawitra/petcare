@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -60,5 +61,24 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(getIntent());
             overridePendingTransition(0, 0);
         }
+
+        val profileNav: BottomNavigationView = findViewById(R.id.bottom_navigation_profile)
+        profileNav.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.btn_profile -> {
+                    Toast.makeText(this, "You are already in the Profile SCREEN", Toast.LENGTH_SHORT).show()
+                }
+                R.id.btn_history -> {
+                    val mIntent = Intent(this@ProfileActivity, HistoryActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                }
+                R.id.btn_setting -> {
+                    val mIntent = Intent(this@ProfileActivity, SettingActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                }
+            }
+            true}
     }
 }

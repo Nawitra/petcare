@@ -1,11 +1,13 @@
 package com.seventhgroup.petcare.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -28,12 +30,12 @@ class HistoryActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        btnRefresh = findViewById(R.id.button_refresh)
+//        btnRefresh = findViewById(R.id.button_refresh)
         rvHistory = findViewById(R.id.rv_historyList)
         rvHistory.setHasFixedSize(true)
 
         getDateData()
-
+/*
         btnRefresh.setOnClickListener {
             getDateData()
             showRecyclerList()
@@ -41,12 +43,32 @@ class HistoryActivity : AppCompatActivity() {
             Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show()
             Toast.makeText(this, historyArrayList.toString(), Toast.LENGTH_SHORT).show()
         }
-        getDateData()
+  */      getDateData()
 
         historyArrayList.add("Halo")
         historyArrayList.add("Yup")
         Toast.makeText(this, historyArrayList.toString(), Toast.LENGTH_SHORT).show()
         showRecyclerList()
+
+
+        val historyNav: BottomNavigationView = findViewById(R.id.bottom_navigation_history)
+        historyNav.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.btn_profile -> {
+                    val mIntent = Intent(this@HistoryActivity, ProfileActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                }
+                R.id.btn_history -> {
+                    Toast.makeText(this, "You are already in the History SCREEN", Toast.LENGTH_SHORT).show()
+                }
+                R.id.btn_setting -> {
+                    val mIntent = Intent(this@HistoryActivity, SettingActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                }
+            }
+            true}
     }
 
     private fun getDateData() {

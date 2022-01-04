@@ -1,8 +1,10 @@
 package com.seventhgroup.petcare.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.seventhgroup.petcare.R
 import com.seventhgroup.petcare.databinding.ActivityRegisterBinding
@@ -27,6 +29,25 @@ class SettingActivity : AppCompatActivity() {
         binding.buttonAddPet.setOnClickListener {
             addPetToDb()
         }
+
+        val settingNav: BottomNavigationView = findViewById(R.id.bottom_navigation_setting)
+        settingNav.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.btn_profile -> {
+                    val mIntent = Intent(this@SettingActivity, ProfileActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                }
+                R.id.btn_history -> {
+                    val mIntent = Intent(this@SettingActivity, HistoryActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
+                    }
+                R.id.btn_setting -> {
+                    Toast.makeText(this, "You are already in the Setting SCREEN", Toast.LENGTH_SHORT).show()
+                }
+            }
+            true}
 
     }
 
