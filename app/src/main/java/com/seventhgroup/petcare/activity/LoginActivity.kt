@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         val user = firebaseUser
         user?.let {
-            val mIntent = Intent(this@LoginActivity, MainActivity::class.java)
+            val mIntent = Intent(this@LoginActivity, HistoryActivity::class.java)
             startActivity(mIntent)
             finish()
         }

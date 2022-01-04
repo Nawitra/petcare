@@ -42,12 +42,10 @@ class HistoryActivity : AppCompatActivity() {
             historyArrayList.add("Shit")
             Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show()
             Toast.makeText(this, historyArrayList.toString(), Toast.LENGTH_SHORT).show()
-        }
-  */      getDateData()
+        }*/
 
-        historyArrayList.add("Halo")
-        historyArrayList.add("Yup")
-        Toast.makeText(this, historyArrayList.toString(), Toast.LENGTH_SHORT).show()
+        historyArrayList.add("Monday, January 03 2022 17:51:50")
+        historyArrayList.add("Monday, January 03 2022 23:27:17")
         showRecyclerList()
 
 
@@ -82,7 +80,6 @@ class HistoryActivity : AppCompatActivity() {
                     date = i.key.toString()
                     historyArrayList.add(i.key!!)
                 }
-                historyArrayList.add("masuk")
             }
 
             override fun onCancelled(error: DatabaseError) {

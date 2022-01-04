@@ -8,10 +8,25 @@
     android:background="@color/background"
     tools:context=".activity.HistoryActivity">
 
+    <TextView
+        android:id="@+id/history_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/lato_reguler"
+        android:gravity="center_horizontal"
+        android:text="History"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_historyList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/history_title"
         android:layout_above="@id/bottom_navigation_history"
         tools:listitem="@layout/history_item" />
 

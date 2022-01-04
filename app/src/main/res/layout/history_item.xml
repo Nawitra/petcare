@@ -17,17 +17,15 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_hist_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|right"
                 android:text="Date"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -35,14 +33,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_hist_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your pet has eaten the food!"
+                android:text="Your Powi has eaten the food!"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
