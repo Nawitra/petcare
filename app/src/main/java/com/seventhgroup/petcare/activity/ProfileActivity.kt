@@ -17,6 +17,7 @@ import com.seventhgroup.petcare.utils.FirebaseUtils.firebaseUser
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
+    private lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +26,24 @@ class ProfileActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        db.collection("users").whereEqualTo("email", firebaseUser?.email).get().addOnCompleteListener { fetch ->
-            if(fetch.isSuccessful) {
-                for(document: DocumentSnapshot in fetch.result!!) {
-                    binding.textUserUsername.text = document.get("username").toString()
-                    binding.textUserSn.text = document.get("sn").toString()
-                    binding.textUserEmail.text = document.get("email").toString()
-                }
-            }
+        val db = FirebaseFirestore.getInstance()
+        val user = FirebaseUtils.firebaseAuth.currentUser
+        if (user != null) {
+            uid = user.uid
         }
+        val data = db.collection("userData").document(uid)
+            data.get()
+                .addOnSuccessListener { document ->
+                    if(document != null){
+                        binding.textUserUsername.text = document.getString("username")
+                        binding.textUserSn.text = document.getString("sn")
+                        binding.textUserEmail.text = document.getString("email")
+                    }
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show()
+            }
 
         binding.buttonLogOut.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
@@ -42,6 +52,13 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(mIntent)
             Toast.makeText(this, "Signed Out", Toast.LENGTH_SHORT).show()
             this?.finish()
+        }
+
+        binding.textUserUsername.setOnClickListener {
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
         }
     }
 }

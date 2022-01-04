@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import com.seventhgroup.petcare.R
 import com.seventhgroup.petcare.databinding.ActivityRegisterBinding
 import com.seventhgroup.petcare.model.User
+import com.seventhgroup.petcare.utils.FirebaseUtils
 import com.seventhgroup.petcare.utils.FirebaseUtils.db
 import com.seventhgroup.petcare.utils.FirebaseUtils.firebaseAuth
 import com.seventhgroup.petcare.utils.FirebaseUtils.firebaseUser
@@ -18,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var userSn: String
     private lateinit var userEmail: String
     private lateinit var userPassword: String
+    private lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,7 +133,13 @@ class RegisterActivity : AppCompatActivity() {
 
         firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
 
-        db.collection("users").document().set(userData)
+        val db = FirebaseFirestore.getInstance()
+        val user = FirebaseUtils.firebaseAuth.currentUser
+        if (user != null) {
+            uid = user.uid
+        }
+
+        db.collection("users").document(uid).set(userData)
             .addOnCompleteListener { register ->
                 if (register.isSuccessful) {
                     Toast.makeText(
@@ -139,7 +148,7 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    val mIntent = Intent(this@RegisterActivity, MainActivity::class.java)
+                    val mIntent = Intent(this@RegisterActivity, HistoryActivity::class.java)
                     startActivity(mIntent)
                     finish()
                 } else {
@@ -156,7 +165,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         val user = firebaseUser
         user?.let {
-            val mIntent = Intent(this@RegisterActivity, MainActivity::class.java)
+            val mIntent = Intent(this@RegisterActivity, HistoryActivity::class.java)
             startActivity(mIntent)
             finish()
         }

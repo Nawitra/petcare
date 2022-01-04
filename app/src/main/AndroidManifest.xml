@@ -21,21 +21,13 @@
             android:name=".activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.HistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.PetActivity"
-            android:exported="false" />
+            android:name=".activity.HistoryActivity"/>
         <activity android:name=".activity.OnboardingActivity" />
         <activity
             android:name=".activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
