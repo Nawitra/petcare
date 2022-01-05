@@ -7,9 +7,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.seventhgroup.petcare.R
 
-class HistoryAdapter (private val listHistory: ArrayList<String>) : RecyclerView.Adapter<HistoryAdapter.ListViewHolder>() {
+class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ListViewHolder>() {
+    private var mData = ArrayList<String>()
+
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvHistDate : TextView = itemView.findViewById(R.id.tv_hist_date)
+    }
+
+    fun setData(items: ArrayList<String>) {
+        mData.clear()
+        mData.addAll(items)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -18,12 +26,12 @@ class HistoryAdapter (private val listHistory: ArrayList<String>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val history = listHistory[position]
+        val history = mData[position]
         holder.tvHistDate.text = history
     }
 
     override fun getItemCount(): Int {
-        return listHistory.size
+        return mData.size
     }
 
 }

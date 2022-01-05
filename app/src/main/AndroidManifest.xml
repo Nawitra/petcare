@@ -15,8 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetCare"
         android:usesCleartextTraffic="true">
-        <receiver android:name=".activity.Notification"
-            android:enabled="true"/>
+        <service
+            android:name=".activity.NotificationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".activity.NotificationService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".activity.ProfileActivity"
             android:exported="false" />

@@ -2,6 +2,7 @@ package com.seventhgroup.petcare.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,6 @@ import com.seventhgroup.petcare.R
 import com.seventhgroup.petcare.databinding.ActivityRegisterBinding
 import com.seventhgroup.petcare.model.User
 import com.seventhgroup.petcare.utils.FirebaseUtils
-import com.seventhgroup.petcare.utils.FirebaseUtils.db
 import com.seventhgroup.petcare.utils.FirebaseUtils.firebaseAuth
 import com.seventhgroup.petcare.utils.FirebaseUtils.firebaseUser
 
@@ -45,6 +45,11 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(mIntent)
             finish()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        startService(Intent(this, NotificationService::class.java))
     }
 
     private fun checkEmpty(): Boolean =
@@ -134,12 +139,8 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
 
         val db = FirebaseFirestore.getInstance()
-        val user = FirebaseUtils.firebaseAuth.currentUser
-        if (user != null) {
-            uid = user.uid
-        }
 
-        db.collection("users").document(uid).set(userData)
+        db.collection("users").document().set(userData)
             .addOnCompleteListener { register ->
                 if (register.isSuccessful) {
                     Toast.makeText(
@@ -159,6 +160,22 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+
+        val user = FirebaseUtils.firebaseAuth.currentUser
+        if (user != null) {
+            uid = user.uid
+
+            Log.i("Testing UID", uid)
+            db.collection("userData").document(uid)
+                .set(userData)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show()
+                }
+        }
+
     }
 
     override fun onStart() {

@@ -32,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
         if (user != null) {
             uid = user.uid
         }
+
         val data = db.collection("userData").document(uid)
             data.get()
                 .addOnSuccessListener { document ->

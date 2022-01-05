@@ -40,6 +40,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+        startService(Intent(this, NotificationService::class.java))
+    }
+
     private fun checkEmpty(): Boolean =
         binding.editLoginEmail.text.toString().trim().isNotEmpty() &&
                 binding.editLoginPassword.text.toString().trim().isNotEmpty()
